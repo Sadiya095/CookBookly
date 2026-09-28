@@ -1,0 +1,16 @@
+{
+  "name": "CookBookly",
+  "short_name": "CookBookly",
+  "description": "Save Recipes. Share Flavors.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b79ced",
+  "icons": [
+    {
+      "src": "/logo-nav.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
