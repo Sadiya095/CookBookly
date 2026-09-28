@@ -1,0 +1,22 @@
+# Backend
+backend/target/
+backend/uploads/
+*.class
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Docker
+.env
+frontend/android/
+frontend/node_modules/
+frontend/dist/
