@@ -55,8 +55,16 @@ export default function CreateRecipe() {
       const { data } = await api.post('/recipes', { ...form, imageUrl });
       navigate(`/recipe/${data.id}`);
     } catch (err) {
-      setError(err.response?.data?.message || 'Could not save recipe');
-    } finally {
+  console.error('Recipe save error:', err);
+  console.error('Response:', err.response);
+  console.error('Request:', err.request);
+
+  setError(
+    err.response?.data?.message ||
+    err.message ||
+    'Could not save recipe'
+  );
+}finally {
       setSaving(false);
     }
   };
