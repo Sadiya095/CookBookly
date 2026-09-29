@@ -49,7 +49,7 @@ export default function CreateRecipe() {
       if (imageFile) {
         const fd = new FormData();
         fd.append('file', imageFile);
-        const up = await api.post('/recipes/upload-image', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
+        const up = await api.post('/recipes/upload-image', fd);
         imageUrl = up.data.imageUrl;
       }
       const { data } = await api.post('/recipes', { ...form, imageUrl });

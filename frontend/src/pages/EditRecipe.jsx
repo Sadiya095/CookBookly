@@ -57,9 +57,7 @@ export default function EditRecipe() {
       if (imageFile) {
         const formData = new FormData();
         formData.append('file', imageFile);
-        const uploadRes = await api.post('/recipes/upload-image', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
+        const uploadRes = await api.post('/recipes/upload-image', formData);
         imageUrl = uploadRes.data.imageUrl;
       }
 
