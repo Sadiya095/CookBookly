@@ -64,8 +64,16 @@ export default function EditRecipe() {
       await api.put(`/recipes/${id}`, { ...form, imageUrl });
       navigate(`/recipe/${id}`);
     } catch (err) {
-      setError(err.response?.data?.message || 'Could not update recipe');
-    } finally {
+  console.error('Recipe update error:', err);
+  console.error('Response:', err.response);
+  console.error('Request:', err.request);
+
+  setError(
+    err.response?.data?.message ||
+    err.message ||
+    'Could not update recipe'
+  );
+} finally {
       setSaving(false);
     }
   };
